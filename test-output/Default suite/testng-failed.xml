@@ -3,13 +3,17 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="RegionsTests">
+      <class name="TicketRebatesTests">
         <methods>
           <include name="testInitialize"/>
-          <include name="editRegion"/>
-          <include name="addNewRegion"/>
+          <include name="browserClose"/>
+          <include name="editRebate"/>
+          <include name="invalidDescriptionAdd"/>
+          <include name="addNewRebate"/>
+          <include name="cancelEditingRebate"/>
+          <include name="rebateAlreadyExists"/>
         </methods>
-      </class> <!-- RegionsTests -->
+      </class> <!-- TicketRebatesTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,8 +6,8 @@
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import Initialization.Browser;
 import Pages.CashControlPage;
 import Pages.DashBoardPage;
@@ -16,8 +16,9 @@ import Pages.UserLoginPage;
 public class UserLoginTests {
 	
 	@BeforeTest
-	void testInitialize() {
-		Browser.initialize();
+	@Parameters({ "Browser" })
+	void testInitialize(String browser) {
+		Browser.initialize(browser);
 	}
 	
 	@Test 
@@ -40,7 +41,7 @@ public class UserLoginTests {
 	@AfterTest
 	void browserClose()
 	{
-		//Browser.instanceClose();
+		Browser.instanceClose();
 	}
 
 }

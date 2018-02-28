@@ -1,79 +1,87 @@
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import Initialization.Browser;
-import Pages.CashControlPage;
 import Pages.RegionsPage;
-import Pages.UserLoginPage;
 
-public class RegionsTests {
-	@BeforeTest
-	void testInitialize() {
-		Browser.initialize();
-		UserLoginPage.goTo();
-		UserLoginPage.loginWithValidCredentials();
-		CashControlPage.loginToACCGroup();
-	}
+
+public class RegionsTests extends BaseTest {
+	
+	//@BeforeTest
+	//@Parameters({ "Browser" })
+	//void testInitialize(String browser) {
+		//Browser.initialize(browser);
+		//UserLoginPage.goTo();
+		//UserLoginPage.loginWithValidCredentials();
+		//CashControlPage.loginToACCGroup();
+	//}
 	
 	@Test 
+	//To verify that the add region functionality is working properly
 	void addNewRegion() 
 	{
-	RegionsPage.goTo();
-	RegionsPage.addNew();
-	Assert.assertTrue(RegionsPage.isAdded(), "New Region is not added");
-	RegionsPage.deleteLastAdded();
-	RegionsPage.close();
+		RegionsPage.goTo();
+		RegionsPage.addNew();
+		Assert.assertTrue(RegionsPage.isAdded(), "New Region is not added");
+		RegionsPage.deleteLastAdded();
+		RegionsPage.close();
 	}
 	
 	@Test 
+	//To verify that the edit region functionality is working properly
 	void editRegion() 
 	{
-	RegionsPage.goTo();
-	RegionsPage.addNew();
-	RegionsPage.close();
-	RegionsPage.goTo();
-	RegionsPage.editRegion();
-	Assert.assertTrue(RegionsPage.isEdited(), "New Region is not updated");
-	RegionsPage.deleteLastAdded();
-	RegionsPage.close();
+		RegionsPage.goTo();
+		RegionsPage.addNew();
+		RegionsPage.close();
+		RegionsPage.goTo();
+		RegionsPage.editRegion();
+		Assert.assertTrue(RegionsPage.isEdited(), "New Region is not updated");
+		RegionsPage.deleteLastAdded();
+		RegionsPage.close();
 	}
 	
 	@Test 
+	//To verify that canceling modification is working properly
 	void cancelEditing() 
 	{
 		RegionsPage.goTo();
 		RegionsPage.addNew();
 		RegionsPage.close();
 		RegionsPage.goTo();
-		RegionsPage.editRegion();
-		Assert.assertTrue(RegionsPage.isEdited(), "New Region is not updated");
-		RegionsPage.deleteLastAdded();
-		RegionsPage.close();
-	}
-	//@Test 
-	void invalidDescriptionAdd() 
-	{
-		RegionsPage.goTo();
-		RegionsPage.addNew();
-		RegionsPage.close();
-		RegionsPage.goTo();
-		RegionsPage.editRegion();
+		RegionsPage.editAndCancelRegion();
 		Assert.assertTrue(RegionsPage.isEdited(), "New Region is not updated");
 		RegionsPage.deleteLastAdded();
 		RegionsPage.close();
 	}
 	
-	//@Test 
-		void regionAlreadyExists() 
-		{
-			RegionsPage.goTo();
-			RegionsPage.addNew();
-			RegionsPage.close();
-			RegionsPage.goTo();
-			RegionsPage.editRegion();
-			Assert.assertTrue(RegionsPage.isEdited(), "New Region is not updated");
-			RegionsPage.deleteLastAdded();
-			RegionsPage.close();
-		}
+	@Test 
+	//To verify that proper error message is displayed when a duplicate entry is made
+	void regionAlreadyExists() 
+	{
+		RegionsPage.goTo();
+		RegionsPage.addNew();
+		RegionsPage.close();
+		RegionsPage.goTo();
+		RegionsPage.addRegionAgain();
+		Assert.assertTrue(RegionsPage.checkProperErrorMessage(), "Error message not displayed");
+		RegionsPage.deleteLastAdded();
+		RegionsPage.close();
+	}
+	
+	@Test //To verify that proper error message is displayed when description is blank
+	void invalidDescriptionAdd() 
+	{
+		RegionsPage.goTo();
+		RegionsPage.addNewWithBlankDescription();
+		Assert.assertTrue(RegionsPage.checkProperErrorMessage(), "Error message not displayed");
+		RegionsPage.close();
+	}
+	
+	@AfterTest
+	void browserClose()
+	{
+		Browser.instanceClose();
+	}
 	
 }
