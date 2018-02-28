@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Parameters Testing(failed)">
+    <parameter name="UserName" value="demo"/>
+    <parameter name="Passcode" value="PASSWORD"/>
+    <parameter name="Browser" value="IE"/>
+    <classes>
+      <class name="RegionsTests">
+        <methods>
+          <include name="testInitialize"/>
+          <include name="editRegion"/>
+          <include name="addNewRegion"/>
+          <include name="cancelEditing"/>
+          <include name="browserClose"/>
+          <include name="invalidDescriptionAdd"/>
+          <include name="regionAlreadyExists"/>
+        </methods>
+      </class> <!-- RegionsTests -->
+    </classes>
+  </test> <!-- Parameters Testing(failed) -->
+</suite> <!-- Failed suite [Suite] -->
