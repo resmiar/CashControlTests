@@ -1,27 +1,21 @@
+package Maintenance;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import Initialization.Browser;
-import Pages.CashControlPage;
-import Pages.DashBoardPage;
-import Pages.GLAccountsPage;
-import Pages.ActivityCenterGroupsPage;
 import Pages.UserLoginPage;
+import Pages.Maintenance.ActivityCenterGroupsPage;
+import Pages.Maintenance.CashControlPage;
+import Pages.Maintenance.DashBoardPage;
+import Pages.Maintenance.GLAccountsPage;
 
-public class ACGroupsTests {
+public class ACGroupsTests extends BaseTest{
 	
-	@BeforeTest
-	@Parameters({ "Browser" })
-	void testInitialize(String browser) {
-		Browser.initialize(browser);
-		UserLoginPage.goTo();
-		UserLoginPage.loginWithValidCredentials();
-		CashControlPage.loginToACCGroup();
-	}
-	
+
 	@Test(priority = 1)
 	void addNewACGroup() 
 	{
@@ -46,7 +40,7 @@ public class ACGroupsTests {
 		//ActivityCenterGroupsPage.closeACGroup();
 	}
 	
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	void cancelEditing() 
 	{
 		System.out.println("This a test for cancel functionality");
@@ -71,19 +65,9 @@ public class ACGroupsTests {
 	@Test(priority = 4)
 	void cannotDeleteACGroupInUse() 
 	{
-		//ActivityCenterGroupsPage.goTo();
-		//ActivityCenterGroupsPage.addAsActiveAndOwnedACGroup();//add an AC Group for Dept 001
-		//ActivityCenterGroupsPage.closeACGroup();
-		//GLAccountsPage.goTo();
-		//GLAccountsPage.updateAlternateACGroupAsNewlyEntered();
-		//GLAccountsPage.close();
 		ActivityCenterGroupsPage.goTo();
 		Assert.assertTrue(ActivityCenterGroupsPage.checkProperDeleteErrorMessageACGroup(), "Error message not displayed");
-		//GLAccountsPage.goTo();
-		//GLAccountsPage.updateAlternateACGroupBackToOriginal();
-		//GLAccountsPage.close();
-		//ActivityCenterGroupsPage.deleteLastAddedACGroup();
-		//ActivityCenterGroupsPage.closeACGroup();
+		
 	}
 	
 	@AfterMethod
@@ -91,11 +75,7 @@ public class ACGroupsTests {
 		ActivityCenterGroupsPage.closeACGroup();
 	}
 	
-	@AfterTest
-	void browserClose()
-	{
-		Browser.instanceClose();
-	}
+	
 	
 }
 

@@ -3,17 +3,13 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TicketRebatesTests">
+      <class name="Maintenance.PLUTests">
         <methods>
-          <include name="testInitialize"/>
           <include name="browserClose"/>
-          <include name="editRebate"/>
-          <include name="invalidDescriptionAdd"/>
-          <include name="addNewRebate"/>
-          <include name="cancelEditingRebate"/>
-          <include name="rebateAlreadyExists"/>
+          <include name="testInitialize"/>
+          <include name="verifyPerTicketValues"/>
         </methods>
-      </class> <!-- TicketRebatesTests -->
+      </class> <!-- Maintenance.PLUTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

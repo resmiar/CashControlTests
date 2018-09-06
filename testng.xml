@@ -3,8 +3,7 @@
 <suite name="Suite">
  <test name="Parameters Testing">
 		<parameter name="Browser" value="Firefox"/>
-		<parameter name="UserName" value="demo"/>
-		<parameter name="Passcode" value="PASSWORD"/>
+		
         <classes>
        
       <class name="RegionsTests"/>

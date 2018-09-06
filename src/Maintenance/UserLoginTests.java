@@ -1,3 +1,4 @@
+package Maintenance;
 /*
 *UserLoginTests
 *
@@ -6,18 +7,19 @@
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import Initialization.Browser;
-import Pages.CashControlPage;
-import Pages.DashBoardPage;
 import Pages.UserLoginPage;
+import Pages.Maintenance.CashControlPage;
+import Pages.Maintenance.DashBoardPage;
 
 public class UserLoginTests {
 	
 	@BeforeTest
 	@Parameters({ "Browser" })
-	void testInitialize(String browser) {
+	void testInitialize(@Optional("Firefox")String browser) {
 		Browser.initialize(browser);
 	}
 	

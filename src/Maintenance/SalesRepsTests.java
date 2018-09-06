@@ -1,24 +1,16 @@
+package Maintenance;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import Initialization.Browser;
-import Pages.CashControlPage;
-import Pages.SalesRepsPage;
 import Pages.UserLoginPage;
+import Pages.Maintenance.CashControlPage;
+import Pages.Maintenance.SalesRepsPage;
 
-public class SalesRepsTests {
-	
-	@BeforeTest
-	@Parameters({ "Browser" })
-	void testInitialize(String browser) {
-		Browser.initialize(browser);
-		UserLoginPage.goTo();
-		UserLoginPage.loginWithValidCredentials();
-		CashControlPage.loginToACCGroup();
-	} 
-	
+public class SalesRepsTests extends BaseTest {
+
 	@Test 
 	//To verify that the add region functionality is working properly
 	void addNewRegion() 
@@ -58,35 +50,6 @@ public class SalesRepsTests {
 		SalesRepsPage.close();
 	}
 	
-	@Test 
-	//To verify that proper error message is displayed when a duplicate entry is made
-	void regionAlreadyExists() 
-	{
-		SalesRepsPage.goTo();
-		SalesRepsPage.addNew();
-		SalesRepsPage.close();
-		SalesRepsPage.goTo();
-		SalesRepsPage.addRegionAgain();
-		Assert.assertTrue(SalesRepsPage.checkProperErrorMessage(), "Error message not displayed");
-		SalesRepsPage.deleteLastAdded();
-		SalesRepsPage.close();
 	}
-	
-	@Test //To verify that proper error message is displayed when description is blank
-	void invalidDescriptionAdd() 
-	{
-		SalesRepsPage.goTo();
-		SalesRepsPage.addNewWithBlankDescription();
-		Assert.assertTrue(SalesRepsPage.checkProperErrorMessage(), "Error message not displayed");
-		SalesRepsPage.close();
-	}
-	
-	@AfterTest
-	void browserClose()
-	{
-		Browser.instanceClose();
-	}
-	
-}
 
 

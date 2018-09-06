@@ -1,8 +1,8 @@
+package Maintenance;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
-import Initialization.Browser;
-import Pages.TicketRebatesPage;
+
+import Pages.Maintenance.TicketRebatesPage;
 
 public class TicketRebatesTests extends BaseTest{
 	
@@ -35,20 +35,18 @@ public class TicketRebatesTests extends BaseTest{
 	{
 		TicketRebatesPage.goTo();
 		TicketRebatesPage.addNew();
-		TicketRebatesPage.editAndCancelRegion();
+		TicketRebatesPage.editAndCancelRebate();
 		TicketRebatesPage.deleteLastAdded();
 		TicketRebatesPage.close();
 	}
 	
 	@Test 
 	//To verify that proper error message is displayed when a duplicate entry is made
-	void rebateAlreadyExists() 
+	void checkGLAccountIsRequired() 
 	{
 		TicketRebatesPage.goTo();
-		TicketRebatesPage.addNew();
-		TicketRebatesPage.addRegionAgain();
+		TicketRebatesPage.addWithoutGLAccount();
 		Assert.assertTrue(TicketRebatesPage.checkProperErrorMessage(), "Error message not displayed");
-		TicketRebatesPage.deleteLastAdded();
 		TicketRebatesPage.close();
 	}
 	

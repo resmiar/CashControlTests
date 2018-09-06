@@ -1,20 +1,12 @@
+package Maintenance;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import Initialization.Browser;
-import Pages.RegionsPage;
+import Pages.Maintenance.RegionsPage;
 
 
 public class RegionsTests extends BaseTest {
-	
-	//@BeforeTest
-	//@Parameters({ "Browser" })
-	//void testInitialize(String browser) {
-		//Browser.initialize(browser);
-		//UserLoginPage.goTo();
-		//UserLoginPage.loginWithValidCredentials();
-		//CashControlPage.loginToACCGroup();
-	//}
 	
 	@Test 
 	//To verify that the add region functionality is working properly
@@ -61,8 +53,6 @@ public class RegionsTests extends BaseTest {
 	{
 		RegionsPage.goTo();
 		RegionsPage.addNew();
-		RegionsPage.close();
-		RegionsPage.goTo();
 		RegionsPage.addRegionAgain();
 		Assert.assertTrue(RegionsPage.checkProperErrorMessage(), "Error message not displayed");
 		RegionsPage.deleteLastAdded();
@@ -78,10 +68,5 @@ public class RegionsTests extends BaseTest {
 		RegionsPage.close();
 	}
 	
-	@AfterTest
-	void browserClose()
-	{
-		Browser.instanceClose();
-	}
 	
 }
