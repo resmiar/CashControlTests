@@ -12,18 +12,7 @@ import Pages.Maintenance.OperatingCalendarPage;
 import Pages.UserLoginPage;
 import Pages.TellerTransactions.WeatherEntryPage;
 
-public class CloseOrReopenCCDayTest {
-
-	@BeforeTest
-	@Parameters({ "Browser" })
-	void testInitialize(@Optional("Firefox")String browser) throws Exception  {
-	//void testInitialize(@Optional("Chrome")String browser) {
-		Browser.initialize(browser);
-		UserLoginPage.goTo();
-		UserLoginPage.loginWithValidCredentials();
-		CashControlPage.loginToACCGroup();
-}
-	
+public class CloseOrReopenCCDayTest extends BaseTest{
 
 	//Get required dates from create journal for verifying the status of dates
 	@Test(priority=1)

@@ -10,17 +10,9 @@ import Pages.TellerTransactions.AttendanceEntryPage;
 import Pages.Maintenance.CashControlPage;
 import Pages.UserLoginPage;
 
-public class AttendanceEntryTest {
-	@BeforeTest
-	@Parameters({ "Browser" })
-	void testInitialize(@Optional("Firefox")String browser) throws Exception  {
-	//void testInitialize(@Optional("Chrome")String browser) {
-		Browser.initialize(browser);
-		UserLoginPage.goTo();
-		UserLoginPage.loginWithValidCredentials();
-		CashControlPage.loginToACCGroup();
-}
-	@Test(priority=1)
+public class AttendanceEntryTest extends BaseTest {
+	
+	//@Test(priority=1)
 	public void CloseandReopenCCDay() throws Exception
 	{
 		AttendanceEntryPage.goTo();
@@ -31,6 +23,7 @@ public class AttendanceEntryTest {
 	@Test(priority=2)	
 	public void AddNewAttendanceAndVerifyCalculations() throws Exception
 	{
+		AttendanceEntryPage.goTo();
 		AttendanceEntryPage.NewAttendanceEntry();
 		AttendanceEntryPage.VerifyCalculations();
 		AttendanceEntryPage.AddtoGrid();

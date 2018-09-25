@@ -11,7 +11,7 @@ public class EmployeesTests extends BaseTest{
 	{
 		EmployeesPage.goTo();
 		EmployeesPage.addNew();
-		Assert.assertTrue(EmployeesPage.isAdded(), "New Region is not added");
+		Assert.assertTrue(EmployeesPage.isAdded(), "New employee is not added");
 		EmployeesPage.deleteLastAdded();
 		EmployeesPage.close();
 	}
@@ -25,7 +25,9 @@ public class EmployeesTests extends BaseTest{
 		EmployeesPage.close();
 		EmployeesPage.goTo();
 		EmployeesPage.editEmployees();
-		Assert.assertTrue(EmployeesPage.isEdited(), "New Region is not updated");
+		EmployeesPage.close();
+		EmployeesPage.goTo();
+		Assert.assertTrue(EmployeesPage.isEdited(), "New employee is not updated");
 		EmployeesPage.deleteLastAdded();
 		EmployeesPage.close();
 	}
@@ -39,7 +41,7 @@ public class EmployeesTests extends BaseTest{
 		EmployeesPage.close();
 		EmployeesPage.goTo();
 		EmployeesPage.editAndCancelEmployee();
-		Assert.assertTrue(EmployeesPage.isEdited(), "New Region is not updated");
+		Assert.assertTrue(EmployeesPage.isEdited(), "New employee is not updated");
 		EmployeesPage.deleteLastAdded();
 		EmployeesPage.close();
 	}
@@ -58,14 +60,6 @@ public class EmployeesTests extends BaseTest{
 		EmployeesPage.close();
 	}
 	
-	@Test //To verify that proper error message is displayed when description is blank
-	void invalidDescriptionAdd() 
-	{
-		EmployeesPage.goTo();
-		EmployeesPage.addNewWithBlankDescription();
-		Assert.assertTrue(EmployeesPage.checkProperErrorMessage(), "Error message not displayed");
-		EmployeesPage.close();
-	}
 	
 	@Test //To verify that proper error message is displayed when description is blank
 	void cannotSaveMoreThanOneActiveBadges() 
@@ -74,6 +68,7 @@ public class EmployeesTests extends BaseTest{
 		EmployeesPage.addNew();
 		EmployeesPage.addBadgeAgain();
 		Assert.assertTrue(EmployeesPage.checkProperErrorMessage(), "Error message not displayed");
+		EmployeesPage.deleteLastAdded();
 		EmployeesPage.close();
 	}
 }

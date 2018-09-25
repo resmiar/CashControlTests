@@ -41,12 +41,13 @@ public class BagTypeTests extends BaseTest{
 		 public void CreateBagId() 
 		 {
 	 	
-	 	 BagTypePage.CreateduplicateBagIdVerify();
 	 	 BagTypePage.CreateBagId();
+	 	 BagTypePage.CreateduplicateBagIdVerify();
 	 	 BagTypePage.CountBagBuilt();
 	 	 BagTypePage.ConvertToBuilt();
 	 	 BagTypePage.goTo();
 	 	 BagTypePage.VerifyBagBuilt();
+	 	 BagTypePage.deleteAddedBag();
 	 
 		 
 		 }

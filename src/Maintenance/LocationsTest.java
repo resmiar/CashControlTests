@@ -11,26 +11,8 @@ import Pages.Maintenance.CashControlPage;
 import Pages.Maintenance.GLAccountsPage;
 import Pages.Maintenance.LocationsPage;
 
-public class LocationsTest {
-	@BeforeTest
-	@Parameters({ "Browser" })
-	void testInitialize(@Optional("Firefox")String browser) {
-	//void testInitialize(@Optional("Chrome")String browser) {
-		Browser.initialize(browser);
-		UserLoginPage.goTo();
-		UserLoginPage.loginWithValidCredentials();
-		CashControlPage.loginToACCGroup();
-}
-	//Creating New AC
-//	@Test(priority=1)
-//	public void CreateNewAC() throws Exception 
-//	{
-//		LocationsPage.goTo();
-//		
-//		LocationsPage.createNewAC();
-//		Assert.assertTrue(LocationsPage.isCreated(),"Not Created" );
-//	}
-	
+public class LocationsTest extends BaseTest {
+
 	
 	//Adding New AC
 	@Test(priority=2)
@@ -68,7 +50,7 @@ public class LocationsTest {
 	}
 	//Add multiple Sales 
 	//@Test(priority=4,invocationCount=7)
-	@Test(priority=4)
+	//@Test(priority=4)
 	public void AddMultipleSalesDesignations()
 	{
 		LocationsPage.AddMultipleSalesDesignations();
@@ -93,30 +75,11 @@ public class LocationsTest {
 	{
 		LocationsPage.DisableLocationActive();
 		LocationsPage.exitPage();
-
 		
 }
 	
-	//Activate :Location
+	
 	@Test(priority=9)
-	public void ActivateLocation() throws Exception
-	{
-		GLAccountsPage.goTo();
-		GLAccountsPage.ActivateACDescription();
-		//GLAccountsPage.Exit();
-		LocationsPage.goTo();
-		LocationsPage.SelectLocationCode();
-		LocationsPage.ActivateLocation();
-	}
-	
-//	@Test(priority=11)
-//	public void SalesDesignationDeleteRelatedItem()
-//	{
-//		LocationsPage.SalesDesignationDeleteRelatedItem();
-//	}
-	
-	
-	@Test(priority=10)
 	public void SameACDifferentSalesCategory()
 	{
 		LocationsPage.AddAC();

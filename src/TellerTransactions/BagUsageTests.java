@@ -8,7 +8,7 @@ import Pages.TellerTransactions.BuildBagsPage;
 import Pages.TellerTransactions.BuildBagsPage;
 
 
-public class BagUsageTests {
+public class BagUsageTests extends BaseTest{
 	@Test(priority = 1)
 	//Verify that returning bags is working properly
 	void verifyReturnBags() {

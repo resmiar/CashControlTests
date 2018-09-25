@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="63291" started-at="2018-09-04T09:26:59Z" finished-at="2018-09-04T09:28:03Z">
+  <suite name="Default suite" duration-ms="68000" started-at="2018-09-25T08:16:08Z" finished-at="2018-09-25T08:17:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="63291" started-at="2018-09-04T09:26:59Z" finished-at="2018-09-04T09:28:03Z">
-      <class name="Maintenance.PLUTests">
-        <test-method status="PASS" signature="testInitialize(java.lang.String)[pri:0, instance:Maintenance.PLUTests@d56d67]" name="testInitialize" is-config="true" duration-ms="41220" started-at="2018-09-04T14:56:59Z" finished-at="2018-09-04T14:57:41Z">
+    <test name="Default test" duration-ms="68000" started-at="2018-09-25T08:16:08Z" finished-at="2018-09-25T08:17:16Z">
+      <class name="EODTransactions.CloseOrReopenCCDayTest">
+        <test-method status="PASS" signature="testInitialize(java.lang.String)[pri:0, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="testInitialize" is-config="true" duration-ms="51002" started-at="2018-09-25T08:16:08Z" finished-at="2018-09-25T08:16:59Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,89 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInitialize -->
-        <test-method status="PASS" signature="verifyPerTicketValues()[pri:0, instance:Maintenance.PLUTests@d56d67]" name="verifyPerTicketValues" duration-ms="21517" started-at="2018-09-04T14:57:41Z" finished-at="2018-09-04T14:58:02Z">
+        <test-method status="PASS" signature="getDaysBetweenDatesForCreateJournal()[pri:1, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="getDaysBetweenDatesForCreateJournal" duration-ms="4480" started-at="2018-09-25T08:16:59Z" finished-at="2018-09-25T08:17:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPerTicketValues -->
-        <test-method status="PASS" signature="browserClose()[pri:0, instance:Maintenance.PLUTests@d56d67]" name="browserClose" is-config="true" duration-ms="530" started-at="2018-09-04T14:58:02Z" finished-at="2018-09-04T14:58:03Z">
+        </test-method> <!-- getDaysBetweenDatesForCreateJournal -->
+        <test-method status="PASS" signature="VerifyDateStatus()[pri:2, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="VerifyDateStatus" duration-ms="4900" started-at="2018-09-25T08:17:03Z" finished-at="2018-09-25T08:17:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyDateStatus -->
+        <test-method status="PASS" signature="EnableWeatherEntryandCloseCCDay()[pri:3, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="EnableWeatherEntryandCloseCCDay" duration-ms="2079" started-at="2018-09-25T08:17:08Z" finished-at="2018-09-25T08:17:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EnableWeatherEntryandCloseCCDay -->
+        <test-method status="PASS" signature="GenerateJournalFile()[pri:4, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="GenerateJournalFile" duration-ms="5409" started-at="2018-09-25T08:17:10Z" finished-at="2018-09-25T08:17:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GenerateJournalFile -->
+        <test-method status="FAIL" signature="VerifyReopenDate()[pri:5, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="VerifyReopenDate" duration-ms="110" started-at="2018-09-25T08:17:16Z" finished-at="2018-09-25T08:17:16Z">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[Element <a class="dropdown-toggle ng-binding" href="#"> is not clickable at point (170.43333435058594,21.26667022705078) because another element <div id="CreateJournalFile" class="modal fade create-journal-file ng-scope in"> obscures it
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:14.666Z'
+System info: host: 'MTONET1', ip: '192.168.6.124', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 19860, moz:profile: C:\Users\rresmi\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: dfd870a5-53c1-47d1-9089-8660b2cc4270]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <a class="dropdown-toggle ng-binding" href="#"> is not clickable at point (170.43333435058594,21.26667022705078) because another element <div id="CreateJournalFile" class="modal fade create-journal-file ng-scope in"> obscures it
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:14.666Z'
+System info: host: 'MTONET1', ip: '192.168.6.124', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 19860, moz:profile: C:\Users\rresmi\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: dfd870a5-53c1-47d1-9089-8660b2cc4270
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at Pages.EODTransactions.CloseOrReopenCCDayPage.goTo(CloseOrReopenCCDayPage.java:43)
+at EODTransactions.CloseOrReopenCCDayTest.VerifyReopenDate(CloseOrReopenCCDayTest.java:64)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyReopenDate -->
+        <test-method status="PASS" signature="browserClose()[pri:0, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="browserClose" is-config="true" duration-ms="0" started-at="2018-09-25T08:17:16Z" finished-at="2018-09-25T08:17:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClose -->
-      </class> <!-- Maintenance.PLUTests -->
+      </class> <!-- EODTransactions.CloseOrReopenCCDayTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

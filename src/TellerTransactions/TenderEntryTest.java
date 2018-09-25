@@ -12,31 +12,26 @@ import Pages.TellerTransactions.CheckInBagsPage;
 import Pages.TellerTransactions.TenderEntryPage;
 import Pages.UserLoginPage;
 
-public class TenderEntryTest {
-	@BeforeTest
-	@Parameters({ "Browser" })
-	void testInitialize(@Optional("Firefox")String browser) throws Exception  {
-	//void testInitialize(@Optional("Chrome")String browser) {
-		Browser.initialize(browser);
-		UserLoginPage.goTo();
-		UserLoginPage.loginWithValidCredentials();
-		CashControlPage.loginToACCGroup();
-}
+public class TenderEntryTest extends BaseTest{
+	
 	//Add a new Tender Entry by validating the dates
-	@Test(priority=1)
+	//@Test(priority=1)
 	public void AddEntry() throws Exception
 	{
 		TenderEntryPage.goTo();
 		TenderEntryPage.Exit();
 		//TenderEntryPage.AddEntryClosedCCDate();
 		TenderEntryPage.NewCCDate();
-		TenderEntryPage.AddNewTenderEntry();
+		//TenderEntryPage.AddNewTenderEntry();
+		TenderEntryPage.Exit();
 	}
 	
 	//Verify All Calculations
 	@Test(priority=2)
 	public void VerifyCalculations() throws Exception
 	{
+		TenderEntryPage.goTo();
+		TenderEntryPage.AddNewTenderEntry();
 		TenderEntryPage.VerifyBillsandCoinsCalculations();
 		TenderEntryPage.VerifyChecksandCCCalculations();
 		TenderEntryPage.VerifyARandScripsCalculations();

@@ -12,7 +12,7 @@ import Pages.EODTransactions.DepositEntryPage;
 public class DepositEntryTests extends BaseTest {
 	
 	//Add a new Deposit Entry by validating the dates
-	//@Test(priority=1)
+	@Test(priority=1)
 	public void AddEntry() throws Exception
 	{
 		DepositEntryPage.goTo();
@@ -23,7 +23,7 @@ public class DepositEntryTests extends BaseTest {
 	}
 		
 	//Verify All Calculations
-	//@Test(priority=2)		
+	@Test(priority=2)		
 	public void VerifyCalculations() throws Exception
 	{
 		DepositEntryPage.goTo();
@@ -49,7 +49,7 @@ public class DepositEntryTests extends BaseTest {
 		
 
 	//Edit And Verify Amount For Deposit Entry
-	//@Test(priority=4)
+	@Test(priority=4)
 	public void EditAndVerifyAmountForDepositEntry() throws Exception
 	{
 		DepositEntryPage.goTo();
