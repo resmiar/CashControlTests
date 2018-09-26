@@ -30,6 +30,7 @@ public class TenderEntryTest extends BaseTest{
 	@Test(priority=2)
 	public void VerifyCalculations() throws Exception
 	{
+		TenderEntryPage.checkOutBagForTrans();
 		TenderEntryPage.goTo();
 		TenderEntryPage.AddNewTenderEntry();
 		TenderEntryPage.VerifyBillsandCoinsCalculations();

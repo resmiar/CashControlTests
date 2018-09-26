@@ -7,7 +7,7 @@ import Pages.TellerTransactions.BuildBagsPage;
 import Pages.TellerTransactions.CheckoutBagsPage;
 
 public class CheckoutBagsTests extends BaseTest{
-	//@Test(priority = 1)
+	@Test(priority = 1)
 	//Verify that checkout is working properly for Park assigned bags
 	void verifyCheckoutForParkAssignedBags() {
 		CheckoutBagsPage.BuildBagForCheckout();
