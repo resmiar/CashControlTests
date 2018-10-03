@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
+<testng-results skipped="0" failed="1" ignored="0" total="8" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="68000" started-at="2018-09-25T08:16:08Z" finished-at="2018-09-25T08:17:16Z">
+  <suite name="Default suite" duration-ms="78641" started-at="2018-10-03T12:02:40Z" finished-at="2018-10-03T12:03:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="68000" started-at="2018-09-25T08:16:08Z" finished-at="2018-09-25T08:17:16Z">
-      <class name="EODTransactions.CloseOrReopenCCDayTest">
-        <test-method status="PASS" signature="testInitialize(java.lang.String)[pri:0, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="testInitialize" is-config="true" duration-ms="51002" started-at="2018-09-25T08:16:08Z" finished-at="2018-09-25T08:16:59Z">
+    <test name="Default test" duration-ms="78641" started-at="2018-10-03T12:02:40Z" finished-at="2018-10-03T12:03:59Z">
+      <class name="Maintenance.BagTypeTests">
+        <test-method status="PASS" signature="testInitialize(java.lang.String)[pri:0, instance:Maintenance.BagTypeTests@653222]" name="testInitialize" is-config="true" duration-ms="44416" started-at="2018-10-03T12:02:40Z" finished-at="2018-10-03T12:03:24Z">
           <params>
             <param index="0">
               <value>
@@ -18,53 +18,35 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInitialize -->
-        <test-method status="PASS" signature="getDaysBetweenDatesForCreateJournal()[pri:1, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="getDaysBetweenDatesForCreateJournal" duration-ms="4480" started-at="2018-09-25T08:16:59Z" finished-at="2018-09-25T08:17:03Z">
+        <test-method status="PASS" signature="AddBagTypeDetails()[pri:0, instance:Maintenance.BagTypeTests@653222]" name="AddBagTypeDetails" duration-ms="9940" started-at="2018-10-03T12:03:24Z" finished-at="2018-10-03T12:03:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDaysBetweenDatesForCreateJournal -->
-        <test-method status="PASS" signature="VerifyDateStatus()[pri:2, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="VerifyDateStatus" duration-ms="4900" started-at="2018-09-25T08:17:03Z" finished-at="2018-09-25T08:17:08Z">
+        </test-method> <!-- AddBagTypeDetails -->
+        <test-method status="PASS" signature="VerifyBagValue()[pri:1, instance:Maintenance.BagTypeTests@653222]" name="VerifyBagValue" duration-ms="910" started-at="2018-10-03T12:03:34Z" finished-at="2018-10-03T12:03:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyDateStatus -->
-        <test-method status="PASS" signature="EnableWeatherEntryandCloseCCDay()[pri:3, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="EnableWeatherEntryandCloseCCDay" duration-ms="2079" started-at="2018-09-25T08:17:08Z" finished-at="2018-09-25T08:17:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnableWeatherEntryandCloseCCDay -->
-        <test-method status="PASS" signature="GenerateJournalFile()[pri:4, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="GenerateJournalFile" duration-ms="5409" started-at="2018-09-25T08:17:10Z" finished-at="2018-09-25T08:17:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GenerateJournalFile -->
-        <test-method status="FAIL" signature="VerifyReopenDate()[pri:5, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="VerifyReopenDate" duration-ms="110" started-at="2018-09-25T08:17:16Z" finished-at="2018-09-25T08:17:16Z">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        </test-method> <!-- VerifyBagValue -->
+        <test-method status="FAIL" signature="CreateBagId()[pri:2, instance:Maintenance.BagTypeTests@653222]" name="CreateBagId" duration-ms="16150" started-at="2018-10-03T12:03:35Z" finished-at="2018-10-03T12:03:51Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Element <a class="dropdown-toggle ng-binding" href="#"> is not clickable at point (170.43333435058594,21.26667022705078) because another element <div id="CreateJournalFile" class="modal fade create-journal-file ng-scope in"> obscures it
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //button[.='Add'] (tried for 10 second(s) with 500 MILLISECONDS interval)
 Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:14.666Z'
-System info: host: 'MTONET1', ip: '192.168.6.124', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_151'
+System info: host: 'MTONET1', ip: '192.168.6.102', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_151'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 19860, moz:profile: C:\Users\rresmi\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: dfd870a5-53c1-47d1-9089-8660b2cc4270]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 22044, moz:profile: C:\Users\rresmi\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 826effb0-16cc-47ea-b5f3-92df1c997651]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <a class="dropdown-toggle ng-binding" href="#"> is not clickable at point (170.43333435058594,21.26667022705078) because another element <div id="CreateJournalFile" class="modal fade create-journal-file ng-scope in"> obscures it
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[.='Add'] (tried for 10 second(s) with 500 MILLISECONDS interval)
 Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:14.666Z'
-System info: host: 'MTONET1', ip: '192.168.6.124', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_151'
+System info: host: 'MTONET1', ip: '192.168.6.102', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_151'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 19860, moz:profile: C:\Users\rresmi\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: dfd870a5-53c1-47d1-9089-8660b2cc4270
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-at Pages.EODTransactions.CloseOrReopenCCDayPage.goTo(CloseOrReopenCCDayPage.java:43)
-at EODTransactions.CloseOrReopenCCDayTest.VerifyReopenDate(CloseOrReopenCCDayTest.java:64)
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 22044, moz:profile: C:\Users\rresmi\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 826effb0-16cc-47ea-b5f3-92df1c997651
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at Pages.Maintenance.BagTypePage.CreateduplicateBagIdVerify(BagTypePage.java:408)
+at Maintenance.BagTypeTests.CreateBagId(BagTypeTests.java:40)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -92,15 +74,35 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyReopenDate -->
-        <test-method status="PASS" signature="browserClose()[pri:0, instance:EODTransactions.CloseOrReopenCCDayTest@d56d67]" name="browserClose" is-config="true" duration-ms="0" started-at="2018-09-25T08:17:16Z" finished-at="2018-09-25T08:17:16Z">
+        </test-method> <!-- CreateBagId -->
+        <test-method status="PASS" signature="deleteAddedBag()[pri:3, instance:Maintenance.BagTypeTests@653222]" name="deleteAddedBag" duration-ms="2020" started-at="2018-10-03T12:03:51Z" finished-at="2018-10-03T12:03:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAddedBag -->
+        <test-method status="PASS" signature="AddNewBagTypeDesc()[pri:4, instance:Maintenance.BagTypeTests@653222]" name="AddNewBagTypeDesc" duration-ms="2396" started-at="2018-10-03T12:03:53Z" finished-at="2018-10-03T12:03:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddNewBagTypeDesc -->
+        <test-method status="PASS" signature="EditBagTypeDescription()[pri:5, instance:Maintenance.BagTypeTests@653222]" name="EditBagTypeDescription" duration-ms="1272" started-at="2018-10-03T12:03:56Z" finished-at="2018-10-03T12:03:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EditBagTypeDescription -->
+        <test-method status="PASS" signature="DeleteBagTypeDescription()[pri:6, instance:Maintenance.BagTypeTests@653222]" name="DeleteBagTypeDescription" duration-ms="669" started-at="2018-10-03T12:03:57Z" finished-at="2018-10-03T12:03:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteBagTypeDescription -->
+        <test-method status="PASS" signature="ExitBagType()[pri:7, instance:Maintenance.BagTypeTests@653222]" name="ExitBagType" duration-ms="340" started-at="2018-10-03T12:03:58Z" finished-at="2018-10-03T12:03:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExitBagType -->
+        <test-method status="PASS" signature="browserClose()[pri:0, instance:Maintenance.BagTypeTests@653222]" name="browserClose" is-config="true" duration-ms="465" started-at="2018-10-03T12:03:58Z" finished-at="2018-10-03T12:03:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClose -->
-      </class> <!-- EODTransactions.CloseOrReopenCCDayTest -->
+      </class> <!-- Maintenance.BagTypeTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

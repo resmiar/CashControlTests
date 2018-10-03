@@ -1,5 +1,6 @@
 package Maintenance;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -8,22 +9,45 @@ import org.testng.annotations.Test;
 import Initialization.Browser;
 import Pages.UserLoginPage;
 import Pages.Maintenance.CashControlPage;
+import Pages.Maintenance.DashBoardPage;
 import Pages.Maintenance.GLAccountsPage;
 import Pages.Maintenance.LocationsPage;
 
-public class LocationsTest extends BaseTest {
+public class LocationsTest {
 
+	@BeforeTest
+	@Parameters({ "Browser" })
+	void testInitialize(@Optional("Firefox")String browser){
+		System.out.println("browser passed as :- " + browser);
+		Browser.initialize(browser);
+		UserLoginPage.goTo();
+		UserLoginPage.loginWithValidCredentials();
+		Assert.assertTrue(CashControlPage.isAt());
+		CashControlPage.loginToACCGroup();
+		Assert.assertTrue(DashBoardPage.isAt());
+	}
+	
+	@AfterTest
+	void browserClose()
+	{
+		LocationsPage.cleanup();
+		Browser.instanceClose();
+	}
 	
 	//Adding New AC
-	@Test(priority=2)
-	public void AddAC()
+	@Test(priority=1)
+	public void AddAC() throws Exception
 	{
-		LocationsPage.AddAC();
+		GLAccountsPage.goTo();
+		GLAccountsPage.ActivateACDescription();
+		GLAccountsPage.Exit();
+		LocationsPage.goTo();
+		LocationsPage.createNewAC();
 		Assert.assertTrue(LocationsPage.isAdded(),"Not Added" );
 		
 	}
 	//Editing AC
-	@Test(priority=3)
+	@Test(priority=2)
 	public void EditAc() throws Exception
 	
 	{
@@ -33,19 +57,20 @@ public class LocationsTest extends BaseTest {
 	}
 	
 	//Removing AC
-	@Test(priority=6)
+	@Test(priority=3)
 	public void RemoveAC() throws Exception 
 	{
+		LocationsPage.AddAC();
 		LocationsPage.RemoveACConfirmErrorMsg();
 		
 		//LocationsPage.RemoveAC();
 	}
 	//Select Location Code
-	@Test(priority=1)
+	@Test(priority=4)
 	public void SelectLocationCode() throws Exception
 	{
-	LocationsPage.goTo();
-	LocationsPage.SelectLocationCode();
+		//LocationsPage.goTo();
+		LocationsPage.SelectLocationCode();
 	
 	}
 	//Add multiple Sales 
@@ -70,7 +95,7 @@ public class LocationsTest extends BaseTest {
 		LocationsPage.MoveToTop();
 	}
 	//Disable the Location
-	@Test(priority=8)
+	@Test(priority=9)
 	public void DisableLocationActive() 
 	{
 		LocationsPage.DisableLocationActive();
@@ -79,10 +104,12 @@ public class LocationsTest extends BaseTest {
 }
 	
 	
-	@Test(priority=9)
-	public void SameACDifferentSalesCategory()
+	@Test(priority=8)
+	public void SameACDifferentSalesCategory() throws Exception
 	{
-		LocationsPage.AddAC();
+		//LocationsPage.AddAC();
 		LocationsPage.SameACCodeDifferentSalesCategory();
+		//LocationsPage.exitPage();
+		
 	}
 }

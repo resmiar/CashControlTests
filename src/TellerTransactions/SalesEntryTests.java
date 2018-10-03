@@ -27,6 +27,7 @@ public class SalesEntryTests extends BaseTest{
 	@Test(priority=2)
 	public void VerifyCalculations() throws Exception
 	{
+		SalesEntryPage.checkoutBag();
 		SalesEntryPage.goTo();
 		SalesEntryPage.selectBag();
 		SalesEntryPage.NewCalculations();
@@ -42,57 +43,20 @@ public class SalesEntryTests extends BaseTest{
 	{
 		SalesEntryPage.selectBag();
 		SalesEntryPage.NewCalculations();
-		SalesEntryPage.SaveEntries();
+		SalesEntryPage.SaveNewEntries();
 		SalesEntryPage.AddNewtoExistingEntry();
 		SalesEntryPage.NewCalculations();
-		SalesEntryPage.RegisterVerifyCalculations();
-		SalesEntryPage.ACDetailsAndActCenterDetailsCalculations();
-		SalesEntryPage.SaveEntries();	
+		SalesEntryPage.SaveNewEntries();	
 	}
 	
 	//Edit Entry Calculations
-	//@Test(priority=4)
+	@Test(priority=4)
 	public void EditToExistingEntries() throws Exception
 	{
 		SalesEntryPage.EditExistingEntry();
 		SalesEntryPage.EditedCalculations();
-		SalesEntryPage.RegisterVerifyCalculations();
 		SalesEntryPage.ACDetailsAndActCenterDetailsCalculations();
 		SalesEntryPage.SaveEntries();	
 	}
-	//Verify Special Event
-	//@Test(priority=5)
-	public void VerifySpecialEvent() throws Exception
-	{
-		
-		SalesEntryPage.VerifySpecialEvent();
-		Assert.assertTrue(SalesEntryPage.VerifyAdded("Special Event"), "Secondary Event is not Enabled from Calendar maintenance");
-	}
 	
-	//Verify Exclusive used Location
-	//@Test(priority=6)
-	public void AddExclusiveLocation() throws Exception
-	{ 
-		SalesEntryPage.VerifyExclusiveUsedLoc();
-	}
-	
-	//Verify Auto Sales
-	//@Test(priority=7)
-	public void VerifyAutoSales() throws Exception
-	{ 
-		SalesEntryPage.AutoSalesEnable();
-		SalesEntryPage.VerifyAutoSales();
-		
-	}
-	
-	//Verify System Options
-	//@Test(priority=8)
-	public void VerifySystemOptions() throws Exception
-	{
-		OptionsPage.goTo();
-		OptionsPage.EnableTransactionsCheckboxes();
-		SalesEntryPage.goTo();
-		SalesEntryPage.VerifySystemOptions();
-	}
-					
 }

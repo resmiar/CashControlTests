@@ -29,16 +29,11 @@ public class BagTypeTests extends BaseTest{
 	 }
 	 
 	 
-		 @Test(priority=7)
-		 public void DeleteBagTypeDetails()
-		 {
-			 BagTypePage.AddBagTypeDetails();
-		 BagTypePage.DeleteBagTypeDetails();
-		 }
+
 		 
 		 
 		 @Test(priority=2)
-		 public void CreateBagId() 
+		 public void CreateBagId() throws Exception 
 		 {
 	 	
 	 	 BagTypePage.CreateBagId();
@@ -47,30 +42,27 @@ public class BagTypeTests extends BaseTest{
 	 	 BagTypePage.ConvertToBuilt();
 	 	 BagTypePage.goTo();
 	 	 BagTypePage.VerifyBagBuilt();
-	 	 BagTypePage.deleteAddedBag();
+	 	 
 	 
 		 
 		 }
+		 
+		 @Test(priority=3)
+		 public void deleteAddedBag() {
+			 BagTypePage.deleteAddedBag();
+		 }
 	 
-//		@Test(priority=4)
-//		public void ViewNewAddBagType()
-//		{	
-//		
-//		BagTypePage.ViewNewBagType();
-//		 
-//		 }
+
  
  
-		@Test(priority=3)
+		@Test(priority=4)
 		public void AddNewBagTypeDesc() throws Exception
 		{
 		
 		BagTypePage.NewBagTypeDescription();
-	Assert.assertTrue(BagTypePage.isAdded()," New description is not added");
-		
-		
-		 
- }
+	    Assert.assertTrue(BagTypePage.isAdded()," New description is not added");
+				 
+		}
 	 
 	 
 	 @Test(priority=5)
@@ -80,7 +72,7 @@ public class BagTypeTests extends BaseTest{
 	 BagTypePage.EditBagTypeDescription();
 	 Assert.assertTrue(BagTypePage.isEdited(), "BagType Description is not edited");
 
- }
+	 }
 	 
 	 
 	 @Test(priority=6)
@@ -92,15 +84,15 @@ public class BagTypeTests extends BaseTest{
 	 }
 	 
 	 
-//	 @Test(priority=7)
-//	 public void ExitBagType()
-//	 {
+	 @Test(priority=7)
+	 public void ExitBagType()
+	 {
 
-//	 BagTypePage.ExitPage();
-//	 BagTypePage.close();
-//	 
-//	  }
-//	 
+	 BagTypePage.ExitPage();
+	 
+	 
+	  }
+	 
 	 
 
 }
